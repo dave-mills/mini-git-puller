@@ -42,7 +42,7 @@ app.post('/submission', (req, res) => {
 
   console.log(`Executing R script: ${scriptFullPath}`);
 
-  exec(`Rscript ${scriptFullPath}`, (error, stdout, stderr) => {
+  exec(`bash ${scriptFullPath}`, (error, stdout, stderr) => {
     if (error) {
       console.error(`Error executing R script: ${error.message}`);
       return res.status(500).json({
